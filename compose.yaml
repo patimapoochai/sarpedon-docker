@@ -1,0 +1,12 @@
+services:
+  web:
+    image: sarpedon
+    build: .
+    depends_on:
+      - mongodb
+    ports:
+      - 127.0.0.1:4013:4013
+    volumes:
+      - ./sarpedon.conf:/opt/sarpedon/sarpedon.conf
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0.0-ubuntu2204
