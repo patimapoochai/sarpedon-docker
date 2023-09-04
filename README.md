@@ -11,11 +11,18 @@ The Sarpedon source files are provided by git as a submodule, so to clone this r
 git clone --recurse-submodules https://github.com/patimapoochai/sarpedon-docker.git
 ```
 
-### Deploying Sarpedon
-```docker-compose up -d```
-
 ### Building only the Sarpedon container
-```docker build --tag sarpedon .```
+```
+docker build --tag sarpedon .
+```
+Alternatively, pre-built containers are also available in the releases tab on Github.
+
+### Deploying Sarpedon
+```
+docker-compose up -d
+```
+
+
 
 ### Sarpedon configuration file
 Sarpedon's configuration file (`sarpedon.conf`) can be found in the root folder. It is bind-mounted to the docker compose setup, so changes to the config will appear after you run `docker-compose down && docker-compose up`. The config file will also be copied into the container during the build process.
