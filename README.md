@@ -19,3 +19,9 @@ git clone --recurse-submodules https://github.com/patimapoochai/sarpedon-docker.
 
 ### Sarpedon configuration file
 Sarpedon's configuration file (`sarpedon.conf`) can be found in the root folder. It is bind-mounted to the docker compose setup, so changes to the config will appear after you run `docker-compose down && docker-compose up`. The config file will also be copied into the container during the build process.
+
+## Integration with Aeacus
+Setup requirements in Aeacus virtual machines to connect to Sarpedon:
+- Create `/opt/aeacus/TeamID.txt` file with a team id that exists in `sarpedon.conf`
+- Make sure the password in `/opt/aeacus/scoring.conf` matches Sarpedon's settings
+- Point Aeacus virtual Machines to the IP of Sarpedon
